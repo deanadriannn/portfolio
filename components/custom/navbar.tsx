@@ -10,7 +10,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#1E1E1D] flex justify-between w-full md:px-5 lg:px-36 xl:px-52 2xl:px-72">
+    <nav className="bg-[#1E1E1D] flex justify-between w-full md:px-5 lg:px-36 xl:px-52 2xl:px-72 mb-10">
       <Image 
         src="/assets/logo.svg"
         alt="logo"
