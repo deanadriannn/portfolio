@@ -8,8 +8,10 @@ body,
   height: 100%;
 }
 
-.primary-gradient {
-  @apply bg-gradient-to-r from-[#205A88] to-[#C02DD8]
+@layer components {
+  .primary-gradient {
+    @apply bg-gradient-to-r from-[#205A88] to-[#C02DD8]
+  }
 }
  
 @layer base {

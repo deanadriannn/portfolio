@@ -8,6 +8,12 @@ module.exports = {
     './src/**/*.{ts,tsx}',
 	],
   theme: {
+    screens: {
+      'mobile': '320px',
+      'tablet': '768px',
+      'laptop': '1024px',
+      'desktop': '1440px'
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -73,5 +79,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate")
+  ],
 }

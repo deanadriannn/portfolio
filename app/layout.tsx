@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 
 import Navbar from "@/components/custom/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils";
 
 import "./globals.css";
 
@@ -23,13 +24,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={cn(font.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
         >
           <Navbar />
-          <main className="md:px-5 lg:px-36 xl:px-52 2xl:px-72">
+          <main className="mobile:px-3 tablet:px-36 laptop:px-64">
             {children}
           </main>
         </ThemeProvider>

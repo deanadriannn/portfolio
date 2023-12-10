@@ -34,36 +34,37 @@ const logos = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-7 items-center px-64">
-      <Image 
-        src="/assets/profile.jpg"
-        alt="profile"
-        width={200}
-        height={200}
-        className="rounded-full"
-      />
-      <h1 className={cn("text-4xl font-extrabold text-center", font.className)}>
+    <div className="flex flex-col items-center mobile:gap-7 mobile:my-10 tablet:my-5">
+      <div className="relative mobile:h-28 mobile:w-28 tablet:h-36 tablet:w-36 laptop:w-48 laptop:h-48">
+        <Image 
+          src="/assets/profile.jpg"
+          alt="profile"
+          fill
+          className="rounded-full"
+        />
+      </div>
+      <h1 className={cn("mobile:text-2xl laptop:text-4xl font-extrabold text-center", font.className)}>
         It's not just<br /><span className="primary-gradient bg-clip-text text-transparent">coding!</span>
       </h1>
-      <p className="text-sm text-center text-secondary-text">
+      <p className="mobile:text-xs text-center text-secondary-text">
         I am a full stack software engineer student, I create websites and  mobile apps by myself at my free time
       </p>
-      <Button className="rounded-full font-bold bg-white">
+      <Button className="rounded-full font-bold bg-white mobile:my-5 mobile:text-xs">
         Get In Touch
       </Button>
-      <div className="flex flex-col gap-3 justify-between items-center">
-        <p className="text-sm font-semibold tracking-wider text-secondary-text">
+      <div className="flex flex-col justify-between items-center mobile:gap-5">
+        <p className="font-semibold tracking-wider text-secondary-text mobile:text-sm">
           EXPERIENCE WITH
         </p>
-        <div className="flex justify-between gap-7">
+        <div className="flex justify-between mobile:gap-7">
           {logos.map(logo => (
-            <Image 
-              src={logo.src}
-              alt={logo.alt}
-              width={25}
-              height={25}
-              key={logo.src}
-            />
+            <div key={logo.src} className="relative mobile:h-5 mobile:w-5">
+              <Image 
+                src={logo.src}
+                alt={logo.alt}
+                fill
+              />
+            </div>
           ))}
         </div>
       </div>

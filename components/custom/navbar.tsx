@@ -25,16 +25,26 @@ const routes = [
 
 const Navbar = () => {
   return (
-    <nav className="bg-[#1E1E1D] flex justify-between w-full md:px-5 lg:px-36 xl:px-52 2xl:px-72 mb-10">
-      <Image 
-        src="/assets/logo.svg"
-        alt="logo"
-        height={60}
-        width={60}
-      />
-      <div className={cn("flex justify-between items-center gap-12", plusJakartaSans.className)}>
+    <nav 
+      className="bg-[#1E1E1D] justify-between items-center w-full mobile:hidden tablet:flex tablet:px-20 
+        laptop:px-36 laptop:mb-10
+      "
+    >
+      <div className="relative tablet:w-12 h-12 laptop:w-16 laptop:h-16">
+        <Image 
+          src="/assets/logo.svg"
+          alt="logo"
+          fill
+        />
+      </div>
+      <div className={cn("flex justify-between items-center tablet:gap-5 laptop:gap-7", plusJakartaSans.className)}>
         {routes.map(route => (
-          <p key={route.title} className="text-sm">
+          <p 
+            key={route.title} 
+            className="hover:primary-gradient hover:bg-clip-text hover:text-transparent transition-colors 
+              cursor-pointer tablet:text-xs tablet:font-extralight laptop:text-sm laptop:font-normal
+            "
+          >
             {route.title}
           </p>
         ))}
