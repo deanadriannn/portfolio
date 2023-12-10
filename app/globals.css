@@ -10,7 +10,7 @@ body,
 
 @layer components {
   .primary-gradient {
-    @apply bg-gradient-to-r from-[#205A88] to-[#C02DD8]
+    @apply bg-gradient-to-r from-[#30D1DF] to-[#C02DD8]
   }
 }
  
