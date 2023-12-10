@@ -6,7 +6,22 @@ import { cn } from "@/lib/utils";
 const plusJakartaSans = Plus_Jakarta_Sans({
   weight: "600",
   subsets: ['latin']
-})
+});
+
+const routes = [
+  {
+    title: "Home"
+  },
+  {
+    title: "Projects"
+  },
+  {
+    title: "Experience"
+  },
+  {
+    title: "Contact"
+  },
+];
 
 const Navbar = () => {
   return (
@@ -14,14 +29,15 @@ const Navbar = () => {
       <Image 
         src="/assets/logo.svg"
         alt="logo"
-        height={80}
-        width={80}
+        height={60}
+        width={60}
       />
-      <div className={cn("flex justify-between items-center gap-16", plusJakartaSans.className)}>
-        <p>Home</p>
-        <p>Projects</p>
-        <p>Experience</p>
-        <p>Contact</p>
+      <div className={cn("flex justify-between items-center gap-12", plusJakartaSans.className)}>
+        {routes.map(route => (
+          <p key={route.title} className="text-sm">
+            {route.title}
+          </p>
+        ))}
       </div>
     </nav>
   )
