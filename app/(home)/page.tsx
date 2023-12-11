@@ -3,7 +3,7 @@ import Projects from "./components/projects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col mobile:gap-12">
+    <div className="flex flex-col">
       <Hero />
       <Projects />
     </div>
