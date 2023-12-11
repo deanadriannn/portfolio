@@ -12,6 +12,10 @@ body,
   .primary-gradient {
     @apply bg-gradient-to-r from-[#30D1DF] to-[#C02DD8]
   }
+
+  .orange-gradient {
+    @apply bg-gradient-to-r from-[#FF8660] to-[#D5491D]
+  }
 }
  
 @layer base {

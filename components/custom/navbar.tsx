@@ -26,8 +26,8 @@ const routes = [
 const Navbar = () => {
   return (
     <nav 
-      className="bg-[#1E1E1D] justify-between items-center w-full mobile:hidden tablet:flex tablet:px-20 
-        laptop:px-36 tablet:mb-5 desktop:px-56 laptop:mb-7
+      className="bg-[#1E1E1D] justify-between items-center w-full fixed top-0 left-0 right-0 z-50 mobile:hidden 
+        tablet:flex tablet:px-20 laptop:px-36 desktop:px-56
       "
     >
       <div className="relative tablet:w-12 h-12 laptop:w-16 laptop:h-16">
