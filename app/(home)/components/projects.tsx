@@ -28,8 +28,8 @@ const Projects = () => {
   return (
     <div 
       id="projects"
-      className="flex flex-col justify-start items-center h-screen mobile:gap-3 tablet:gap-4 laptop:gap-5 
-        desktop:gap-6 scroll-mt-20"
+      className="flex flex-col justify-start items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 
+        laptop:gap-5 laptop:mb-4 scroll-mt-20 desktop:gap-6"
     >
       <h1 
         className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg 
@@ -37,7 +37,7 @@ const Projects = () => {
       >
         Projects
       </h1>
-      <div className="grid mobile:grid-cols-2 gap-4 w-full">
+      <div className="grid grid-cols-2 gap-4 w-full">
         {/* Take only 6 projects */}
         {takenProjects.map(project => (
           <ProjectCard key={project.thumbnail} title={project.title} thumbnail={project.thumbnail}/>

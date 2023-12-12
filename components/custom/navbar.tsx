@@ -37,7 +37,7 @@ const Navbar = () => {
     >
       <div className="relative tablet:w-12 h-12 laptop:w-16 laptop:h-16">
         <Image 
-          src="/assets/logo.svg"
+          src="/assets/hero/logo.svg"
           alt="logo"
           fill
         />

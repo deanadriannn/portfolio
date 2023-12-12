@@ -1,31 +1,9 @@
 import Image from "next/image";
-
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
 
-const logos = [
-  {
-    src: "/assets/typescript.svg",
-    alt: "typescript"
-  },
-  {
-    src: "/assets/nextjs.svg",
-    alt: "nextjs"
-  },
-  {
-    src: "/assets/html.svg",
-    alt: "html"
-  },
-  {
-    src: "/assets/css.svg",
-    alt: "css"
-  },
-  {
-    src: "/assets/reactjs.svg",
-    alt: "reactjs"
-  },
-];
+import { logos } from "@/constant";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const font = Poppins({ 
   weight: "800",
@@ -41,7 +19,7 @@ const Hero = () => {
         desktop:h-64"
       >
         <Image 
-          src="/assets/profile.jpg"
+          src="/assets/hero/profile.jpg"
           alt="profile"
           fill
           className="rounded-full"

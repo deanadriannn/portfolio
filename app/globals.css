@@ -16,6 +16,10 @@ body,
   .orange-gradient {
     @apply bg-gradient-to-r from-[#FF8660] to-[#D5491D]
   }
+
+  .blue-gradient {
+    @apply bg-gradient-to-r from-[#5BADFF] to-[#1373D1]
+  }
 }
  
 @layer base {
