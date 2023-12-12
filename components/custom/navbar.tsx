@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
@@ -10,16 +11,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const routes = [
   {
-    title: "Home"
+    title: "Home",
+    route: "#home"
   },
   {
-    title: "Projects"
+    title: "Projects",
+    route: "#projects"
   },
   {
-    title: "Experience"
+    title: "Experience",
+    route: "#experience"
   },
   {
-    title: "Contact"
+    title: "Contact",
+    route: "#contact"
   },
 ];
 
@@ -39,14 +44,15 @@ const Navbar = () => {
       </div>
       <div className={cn("flex justify-between items-center tablet:gap-5 laptop:gap-7", plusJakartaSans.className)}>
         {routes.map(route => (
-          <p 
+          <Link 
+            href={route.route}
             key={route.title} 
             className="hover:primary-gradient hover:bg-clip-text hover:text-transparent transition-colors 
               cursor-pointer tablet:text-xs tablet:font-extralight laptop:text-sm laptop:font-normal
             "
           >
             {route.title}
-          </p>
+          </Link>
         ))}
       </div>
     </nav>
