@@ -9,7 +9,7 @@ interface ExperienceCardProps {
 
 const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardProps) => {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col mobile:gap-1 laptop:gap-2">
       <div className="flex justify-between">
         <div className="flex justify-start gap-2 items-center">
           <Image 
@@ -18,11 +18,11 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
             width={15}
             height={15}
           />
-          <h1 className="font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem]">{title}</h1>
+          <h1 className="font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{title}</h1>
         </div>
-        <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem]">{timePeriod}</p>
+        <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{timePeriod}</p>
       </div>
-      <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem]">{desciption}</p>
+      <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{desciption}</p>
     </div>
   )
 };

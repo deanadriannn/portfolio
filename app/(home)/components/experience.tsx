@@ -13,7 +13,7 @@ const Experience = () => {
   return (
     <div 
       id="experience"
-      className="flex flex-col justify-start items-center h-screen mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 
+      className="flex flex-col justify-start items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 
         laptop:gap-5 laptop:mb-4 scroll-mt-20 desktop:gap-6"
     >
       <h1 

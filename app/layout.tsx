@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "@/components/custom/navbar";
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import Contact from "@/components/custom/contact";
 
 import "./globals.css";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
           <main className="mobile:px-3 tablet:px-36 laptop:px-64 desktop:px-96">
             {children}
           </main>
+          <Contact />
         </ThemeProvider>
       </body>
     </html>

@@ -68,3 +68,22 @@ export const experience = [
     desciption: `As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.`,
   },
 ];
+
+export const contacts = [
+  {
+    icon: "/assets/contact/instagram.svg",
+    alt: "instagram"
+  },
+  {
+    icon: "/assets/contact/x.svg",
+    alt: "x"
+  },
+  {
+    icon: "/assets/contact/youtube.svg",
+    alt: "youtube"
+  },
+  {
+    icon: "/assets/contact/facebook.svg",
+    alt: "facebook"
+  },
+]
