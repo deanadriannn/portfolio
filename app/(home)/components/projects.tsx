@@ -3,6 +3,7 @@
 import { Poppins } from "next/font/google";
 import { useState } from "react";
 import { ArrowDown } from "lucide-react";
+import { useInView } from 'react-intersection-observer';
 
 import ProjectCard from "@/components/custom/project-card";
 import { Button } from "@/components/ui/button";
@@ -15,13 +16,18 @@ const font = Poppins({
 });
 
 const Projects = () => {
-  const [totalProjects, setTotalProjects] = useState(2);
-  const [takenProjects, setTakenProjects] = useState(projects.slice(0, totalProjects));
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Hanya trigger satu kali saat masuk ke dalam tampilan
+  });
+
+  const [takenProjects, setTakenProjects] = useState(projects.slice(0, 2));
 
   const loadMoreProjects = () => {
-    if (projects.length >= totalProjects) {
-      setTotalProjects(prev => prev + 2);
-      setTakenProjects(projects.slice(0, totalProjects))
+    if (projects.length > takenProjects.length) {
+      setTakenProjects(prevProjects => {
+        const newProjects = projects.slice(prevProjects.length, prevProjects.length + 2);
+        return [...prevProjects, ...newProjects];
+      });
     }
   };
 
@@ -39,11 +45,22 @@ const Projects = () => {
       </h1>
       <div className="grid grid-cols-2 gap-4 w-full">
         {/* Take only 6 projects */}
-        {takenProjects.map(project => (
-          <ProjectCard key={project.thumbnail} title={project.title} thumbnail={project.thumbnail}/>
-        ))}
+        {takenProjects.map((project, index) => {
+          const delay = 200 * index;
+
+          return (
+            <div
+              ref={ref}
+              key={project.thumbnail}
+              style={{ animation: inView ? `slide 0.5s ease-out ${delay}ms forwards`: 'none' }}
+              className={cn("opacity-0", inView ? 'animate-slide' : '')}
+            >
+              <ProjectCard title={project.title} thumbnail={project.thumbnail}/>
+            </div>
+          )
+        })}
       </div>
-      {totalProjects <= projects.length && (
+      {takenProjects.length < projects.length && (
         <Button 
           className="rounded-full mt-5" 
           size="icon" 

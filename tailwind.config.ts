@@ -77,7 +77,7 @@ module.exports = {
           '50%': { transform: 'rotate(3deg)' },
         },
         slide: {
-          '0%': { transform: 'translateX(-200%)', opacity: 0 },
+          '0%': { transform: 'translateX(-25%)', opacity: 0 },
           '100%': { transform: 'none', opacity: 1 }
         }
       },
