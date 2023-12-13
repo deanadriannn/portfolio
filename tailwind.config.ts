@@ -72,11 +72,27 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+        slide: {
+          '0%': { transform: 'translateX(-200%)', opacity: 0 },
+          '100%': { transform: 'none', opacity: 1 }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "wiggle": 'wiggle 1s ease-in-out infinite',
+        "slide": "slide 1s ease-out"
       },
+      transitionDelay: {
+        '2000': '2000ms',
+        '3000': '3000ms',
+        '4000': '4000ms',
+        '5000': '5000ms',
+      }
     },
   },
   plugins: [

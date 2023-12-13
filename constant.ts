@@ -1,23 +1,28 @@
 export const logos = [
   {
     src: "/assets/hero/typescript.svg",
-    alt: "typescript"
+    alt: "typescript",
+    delay: 100
   },
   {
     src: "/assets/hero/nextjs.svg",
-    alt: "nextjs"
+    alt: "nextjs",
+    delay: 100
   },
   {
     src: "/assets/hero/html.svg",
-    alt: "html"
+    alt: "html",
+    delay: 1000
   },
   {
     src: "/assets/hero/css.svg",
-    alt: "css"
+    alt: "css",
+    delay: 2000
   },
   {
     src: "/assets/hero/reactjs.svg",
-    alt: "reactjs"
+    alt: "reactjs",
+    delay: 1000
   },
 ];
 

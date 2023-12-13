@@ -39,15 +39,30 @@ const Hero = () => {
           EXPERIENCE WITH
         </p>
         <div className="flex justify-between mobile:gap-7">
-          {logos.map(logo => (
-            <div key={logo.src} className="relative mobile:h-5 mobile:w-5 laptop:h-7 laptop:w-7 desktop:h-9 desktop:w-9">
-              <Image 
-                src={logo.src}
-                alt={logo.alt}
-                fill
-              />
-            </div>
-          ))}
+          {logos.map((logo, index) => {
+            const delay = 500 * index;
+
+            return (
+              <div 
+                key={logo.src} 
+                style={{ animation: `slide 1s ease-out ${delay}ms forwards` }}
+                className={cn(
+                  `
+                    relative opacity-0
+                    mobile:h-5 mobile:w-5 
+                    laptop:h-7 laptop:w-7 
+                    desktop:h-9 desktop:w-9
+                  `
+                )}
+              >
+                <Image 
+                  src={logo.src}
+                  alt={logo.alt}
+                  fill
+                />
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
