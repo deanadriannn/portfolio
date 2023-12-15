@@ -22,6 +22,9 @@ module.exports = {
       },
     },
     extend: {
+      gridColumnStart: {
+        '0.5': '0.5'
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
