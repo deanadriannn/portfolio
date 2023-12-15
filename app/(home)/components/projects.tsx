@@ -17,7 +17,7 @@ const font = Poppins({
 
 const Projects = () => {
   const [ref, inView] = useInView({
-    triggerOnce: true, // Hanya trigger satu kali saat masuk ke dalam tampilan
+    triggerOnce: true,
   });
 
   const [takenProjects, setTakenProjects] = useState(projects.slice(0, 2));
@@ -44,7 +44,6 @@ const Projects = () => {
         Projects
       </h1>
       <div className="grid grid-cols-2 gap-4 w-full">
-        {/* Take only 6 projects */}
         {takenProjects.map((project, index) => {
           const delay = 200 * index;
 
@@ -52,8 +51,8 @@ const Projects = () => {
             <div
               ref={ref}
               key={project.thumbnail}
-              style={{ animation: inView ? `slide 0.5s ease-out ${delay}ms forwards`: 'none' }}
-              className={cn("opacity-0", inView ? 'animate-slide' : '')}
+              style={{ animation: inView ? `fade-in 0.5s ease-out ${delay}ms forwards`: 'none' }}
+              className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
             >
               <ProjectCard title={project.title} thumbnail={project.thumbnail}/>
             </div>
