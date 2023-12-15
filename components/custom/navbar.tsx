@@ -44,15 +44,16 @@ const Navbar = () => {
       </div>
       <div className={cn("flex justify-between items-center tablet:gap-5 laptop:gap-7", plusJakartaSans.className)}>
         {routes.map(route => (
-          <Link 
-            href={route.route}
-            key={route.title} 
-            className="hover:primary-gradient hover:bg-clip-text hover:text-transparent transition-colors 
-              cursor-pointer tablet:text-xs tablet:font-extralight laptop:text-sm laptop:font-normal
-            "
-          >
-            {route.title}
-          </Link>
+          <div key={route.title} className="relative group">
+            <Link 
+              href={route.route}
+              className="cursor-pointer tablet:text-xs tablet:font-extralight laptop:text-sm laptop:font-normal"
+            >
+              {route.title}
+            </Link>
+            <div className="h-0.5 absolute w-0 bottom-0 left-1/2 transform -translate-x-1/2 group-hover:w-[80%] primary-gradient transition-all duration-1000">
+            </div>
+          </div>
         ))}
       </div>
     </nav>

@@ -22,9 +22,6 @@ module.exports = {
       },
     },
     extend: {
-      gridColumnStart: {
-        '0.5': '0.5'
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -95,12 +92,6 @@ module.exports = {
         "slide": "slide 1s ease-out",
         "fade-in": "fade-in 0.2s ease-out forwards"
       },
-      transitionDelay: {
-        '2000': '2000ms',
-        '3000': '3000ms',
-        '4000': '4000ms',
-        '5000': '5000ms',
-      }
     },
   },
   plugins: [

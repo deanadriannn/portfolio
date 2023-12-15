@@ -26,26 +26,18 @@ const Projects = () => {
 
   const loadMoreProjects = () => {
     setLoading(true);
-    // if (projects.length > takenProjects.length) {
-    //   setTakenProjects(prevProjects => {
-    //     const newProjects = projects.slice(prevProjects.length, prevProjects.length + 2);
-    //     return [...prevProjects, ...newProjects];
-    //   });
-    // }
-    // setLoading(false);
-    setTimeout(() => {
-      if (projects.length > takenProjects.length) {
-        setTakenProjects((prevProjects) => {
-          const newProjects = projects.slice(
-            prevProjects.length,
-            prevProjects.length + 2
-          );
-          return [...prevProjects, ...newProjects];
-        });
-      }
-  
-      setLoading(false);
-    }, 2000);
+    
+    if (projects.length > takenProjects.length) {
+      setTakenProjects((prevProjects) => {
+        const newProjects = projects.slice(
+          prevProjects.length,
+          prevProjects.length + 2
+        );
+        return [...prevProjects, ...newProjects];
+      });
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -62,13 +54,7 @@ const Projects = () => {
       </h1>
       <div className="grid grid-cols-2 gap-4 w-full">
         {takenProjects.map((project, index) => {
-          const delay = 200 * index;
-
-          // if (loading) {
-          //   return (
-          //     <h1 className="text-white font-bold">Loading...</h1>
-          //   )
-          // }
+          const delay = 100 * index;
 
           return (
             <div
@@ -82,27 +68,27 @@ const Projects = () => {
           )
         })}
       </div>
-      {loading ? (
-        <div className="w-[50%] aspect-video flex justify-center items-center">
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={['#30D1DF', '#03214C', '#250C50', '#431974', '#C02DD8']}
-          />
-        </div>
-      ): null}
       {takenProjects.length < projects.length && (
         <Button 
           className="rounded-full mt-5" 
           size="icon" 
           variant="outline"
           onClick={loadMoreProjects}
+          disabled={loading}
         >
-          <ArrowDown className="h-4 w-4" />
+          {loading ? (
+            <ColorRing
+              visible={true}
+              height="1rem"
+              width="1rem"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={['#30D1DF', '#03214C', '#250C50', '#431974', '#C02DD8']}
+            />
+          ): (
+            <ArrowDown className="h-4 w-4" />
+          )}
         </Button>
       )}
     </div>

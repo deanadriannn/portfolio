@@ -23,7 +23,7 @@ const Experience = () => {
         Experience
       </h1>
       <div className="grid grid-cols-1 gap-4 w-full">
-        {experience.map(exp => (
+        {experience.map((exp) => (
           <ExperienceCard 
             key={exp.icon}
             icon={exp.icon}

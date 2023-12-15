@@ -1,4 +1,9 @@
+"use client";
+
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+
+import { cn } from "@/lib/utils";
 
 interface ExperienceCardProps {
   icon: string;
@@ -8,8 +13,12 @@ interface ExperienceCardProps {
 }
 
 const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardProps) => {
+  const {ref, inView} = useInView({
+    triggerOnce: true,
+  });
+
   return (
-    <div className="flex flex-col mobile:gap-1 laptop:gap-2">
+    <div ref={ref} className="flex flex-col mobile:gap-1 laptop:gap-2">
       <div className="flex justify-between">
         <div className="flex justify-start gap-2 items-center">
           <Image 
@@ -17,12 +26,37 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
             alt={title}
             width={15}
             height={15}
+            className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
+            style={{ animation: inView ? `fade-in 0.5s ease-out 200ms forwards`: 'none' }}
           />
-          <h1 className="font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{title}</h1>
+          <h1 
+            className={cn("font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0",
+              inView ? 'animate-fade-in' : ''
+            )}
+            style={{ animation: inView ? `fade-in 0.5s ease-out 400ms forwards`: 'none' }}
+          >
+            {title}
+          </h1>
         </div>
-        <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{timePeriod}</p>
+        <p 
+          className={cn(`text-secondary-text font-light mobile:text-[0.5rem] 
+            laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0`,
+            inView ? 'animate-fade-in' : ''
+          )}
+          style={{ animation: inView ? `fade-in 0.5s ease-out 600ms forwards`: 'none' }}
+        >
+          {timePeriod}
+        </p>
       </div>
-      <p className="text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem]">{desciption}</p>
+      <p 
+        className={cn(`text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] 
+          desktop:text-[0.8rem] opacity-0`,
+          inView ? 'animate-fade-in' : ''
+        )}
+        style={{ animation: inView ? `fade-in 0.5s ease-out 800ms forwards`: 'none' }}
+      >
+        {desciption}
+      </p>
     </div>
   )
 };
