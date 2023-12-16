@@ -26,7 +26,7 @@ const Hero = () => {
         />
       </div>
       <h1 className={cn("font-extrabold text-center mobile:text-2xl laptop:text-4xl desktop:text-5xl", font.className)}>
-        It's not just<br /><span className="primary-gradient bg-clip-text text-transparent">coding!</span>
+        It&apos;s not just<br /><span className="primary-gradient bg-clip-text text-transparent">coding!</span>
       </h1>
       <p className="text-center text-secondary-text mobile:text-xs laptop:text-base desktop:text-lg">
         I am a full stack software engineer student, I create websites and  mobile apps by myself at my free time
