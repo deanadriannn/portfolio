@@ -2,7 +2,7 @@
 
 import { Poppins } from "next/font/google";
 import { useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
 import { ColorRing } from "react-loader-spinner";
 
@@ -21,38 +21,19 @@ const Projects = () => {
     triggerOnce: true,
   });
 
-  const [takenProjects, setTakenProjects] = useState(projects.slice(0, 2));
-  const [loading, setLoading] = useState(false);
-
-  const loadMoreProjects = () => {
-    setLoading(true);
-    
-    if (projects.length > takenProjects.length) {
-      setTakenProjects((prevProjects) => {
-        const newProjects = projects.slice(
-          prevProjects.length,
-          prevProjects.length + 2
-        );
-        return [...prevProjects, ...newProjects];
-      });
-    }
-
-    setLoading(false);
-  };
-
   return (
     <div 
       id="projects"
-      className="snap-center flex flex-col justify-start h-screen items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 laptop:gap-5 laptop:mb-4 desktop:gap-6 pt-10 overflow-y-auto"
+      className="snap-center flex flex-col justify-center h-screen items-center mobile:gap-5 mobile:px-5 tablet:px-10 tablet:gap-7 laptop:px-48"
     >
       <h1 
-        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg laptop:text-2xl desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
+        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg tablet:text-3xl desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
         style={{ animation: inView ? `fade-in 0.5s ease-out ${500}ms forwards`: 'none' }}
       >
         Projects
       </h1>
-      <div className="flex flex-col gap-4 w-full">
-        {takenProjects.map((project, index) => {
+      <div className="w-full grid mobile:gap-3 mobile:grid-cols-2 tablet:gap-4 laptop:grid-cols-3">
+        {projects.map((project, index) => {
           const delay = 100 * index;
 
           return (
@@ -60,36 +41,20 @@ const Projects = () => {
               ref={ref}
               key={project.thumbnail}
               style={{ animation: inView ? `fade-in 0.5s ease-out ${1000+delay}ms forwards`: 'none' }}
-              className="opacity-0 animate-fade-in mb-3"
+              className="opacity-0 animate-fade-in"
             >
               <ProjectCard title={project.title} thumbnail={project.thumbnail} />
             </div>
           )
         })}
       </div>
-      {takenProjects.length < projects.length && (
-        <Button 
-          className="rounded-full" 
-          size="icon" 
-          variant="outline"
-          onClick={loadMoreProjects}
-          disabled={loading}
-        >
-          {loading ? (
-            <ColorRing
-              visible={true}
-              height="1rem"
-              width="1rem"
-              ariaLabel="blocks-loading"
-              wrapperStyle={{}}
-              wrapperClass="blocks-wrapper"
-              colors={['#30D1DF', '#03214C', '#250C50', '#431974', '#C02DD8']}
-            />
-          ): (
-            <ArrowDown className="h-4 w-4" />
-          )}
-        </Button>
-      )}
+      
+      <Button 
+        variant="outline" 
+        className="flex items-center justify-between rounded-full focus:border-sky-400 hover:border-sky-400 px-5 hover:px-4 focus:px-4 transition-all mobile:text-[0.6rem] mobile:gap-2 tablet:text-base tablet:py-7"
+      >
+        View More <ArrowRight className="mobile:w-3 mobile:h-3 tablet:w-5 tablet:h-5" />
+      </Button>
     </div>
   )
 };

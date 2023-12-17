@@ -30,7 +30,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
         >
-          <main className="mobile:px-3 tablet:px-36 laptop:px-64 desktop:px-96">
+          <main>
             {children}
           </main>
         </ThemeProvider>

@@ -92,6 +92,9 @@ module.exports = {
         "slide": "slide 1s ease-out",
         "fade-in": "fade-in 0.2s ease-out forwards"
       },
+      padding: {
+        '120': '30rem',
+      }
     },
   },
   plugins: [

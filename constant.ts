@@ -28,7 +28,7 @@ export const logos = [
 
 export const projects = [
   {
-    title: "Project 1",
+    title: "Project 1 lks lk jd sldjk fdslk jdslk jdkls jfdslk jfdk sldkfjd slkf jdslkfd jslfkd jskf ldkfj dkl dks jfdslfkd jfdkslfkj dkslk jfdksldkfj dslkf",
     thumbnail: "/assets/projects/thumbnail-1.png"
   },
   {
