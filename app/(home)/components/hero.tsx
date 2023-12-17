@@ -12,11 +12,9 @@ const font = Poppins({
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center justify-center overflow-hidden h-screen mobile:gap-8
-      tablet:pt-10 laptop:gap-10 desktop:gap-12"
+    <div className="flex flex-col items-center justify-center overflow-hidden h-screen mobile:gap-8 mobile:px-16 tablet:px-20"
     >
-      <div className="relative mobile:h-28 mobile:w-28 tablet:h-36 tablet:w-36 laptop:w-52 laptop:h-52 desktop:w-64 
-        desktop:h-64"
+      <div className="relative mobile:h-36 mobile:w-36 tablet:h-36 tablet:w-36 laptop:h-44 laptop:w-44"
       >
         <Image 
           src="/assets/hero/profile.jpg"
@@ -46,15 +44,7 @@ const Hero = () => {
               <div 
                 key={logo.src} 
                 style={{ animation: `slide 0.5s ease-out ${delay}ms forwards` }}
-                className={cn(
-                  `
-                    relative opacity-0
-                    mobile:h-5 mobile:w-5 
-                    laptop:h-7 laptop:w-7 
-                    desktop:h-9 desktop:w-9
-                    animate-slide
-                  `
-                )}
+                className="relative opacity-0 mobile:h-5 mobile:w-5 laptop:h-7 laptop:w-7 desktop:h-9 desktop:w-9 animate-slide"
               >
                 <Image 
                   src={logo.src}

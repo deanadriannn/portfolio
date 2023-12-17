@@ -11,15 +11,16 @@ const ProjectCard = ({
   thumbnail
 }: ProjectCardProps) => {
   return (
-    <div className="w-full group cursor-pointer"> 
-      <div className="w-full aspect-video relative rounded-t-lg">
+    <div className="w-full group flex cursor-pointer rounded-lg bg-[#2A2A2A]"> 
+      <div className="w-[50%] aspect-video relative">
         <Image 
           src={thumbnail}
           alt={title}
           fill
+          className="rounded-l-lg"
         />
       </div>
-      <div className="w-full bg-[#2A2A2A] rounded-b-lg flex justify-between items-center transition-all 
+      <div className="w-full flex justify-between items-center transition-all 
         ease-in-out mobile:px-3 mobile:py-1 group-hover:mobile:px-2 laptop:px-4 laptop:py-2 group-hover:laptop:px-3"
       >
         <div>

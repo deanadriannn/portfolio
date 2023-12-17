@@ -30,11 +30,9 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
         >
-          <Navbar />
           <main className="mobile:px-3 tablet:px-36 laptop:px-64 desktop:px-96">
             {children}
           </main>
-          <Contact />
         </ThemeProvider>
       </body>
     </html>

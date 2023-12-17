@@ -43,16 +43,15 @@ const Projects = () => {
   return (
     <div 
       id="projects"
-      className="flex flex-col justify-start items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 
-        laptop:gap-5 laptop:mb-4 scroll-mt-20 desktop:gap-6"
+      className="snap-center flex flex-col justify-start h-screen items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 laptop:gap-5 laptop:mb-4 desktop:gap-6 pt-10 overflow-y-auto"
     >
       <h1 
-        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg 
-          laptop:text-2xl desktop:text-3xl`, font.className)}
+        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg laptop:text-2xl desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
+        style={{ animation: inView ? `fade-in 0.5s ease-out ${500}ms forwards`: 'none' }}
       >
         Projects
       </h1>
-      <div className="grid grid-cols-2 gap-4 w-full">
+      <div className="flex flex-col gap-4 w-full">
         {takenProjects.map((project, index) => {
           const delay = 100 * index;
 
@@ -60,8 +59,8 @@ const Projects = () => {
             <div
               ref={ref}
               key={project.thumbnail}
-              style={{ animation: inView ? `fade-in 0.5s ease-out ${delay}ms forwards`: 'none' }}
-              className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
+              style={{ animation: inView ? `fade-in 0.5s ease-out ${1000+delay}ms forwards`: 'none' }}
+              className="opacity-0 animate-fade-in mb-3"
             >
               <ProjectCard title={project.title} thumbnail={project.thumbnail} />
             </div>
@@ -70,7 +69,7 @@ const Projects = () => {
       </div>
       {takenProjects.length < projects.length && (
         <Button 
-          className="rounded-full mt-5" 
+          className="rounded-full" 
           size="icon" 
           variant="outline"
           onClick={loadMoreProjects}

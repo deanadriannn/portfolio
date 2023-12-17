@@ -27,13 +27,13 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
             width={15}
             height={15}
             className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
-            style={{ animation: inView ? `fade-in 0.5s ease-out 200ms forwards`: 'none' }}
+            style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
           />
           <h1 
             className={cn("font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0",
               inView ? 'animate-fade-in' : ''
             )}
-            style={{ animation: inView ? `fade-in 0.5s ease-out 400ms forwards`: 'none' }}
+            style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
           >
             {title}
           </h1>
@@ -43,7 +43,7 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
             laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0`,
             inView ? 'animate-fade-in' : ''
           )}
-          style={{ animation: inView ? `fade-in 0.5s ease-out 600ms forwards`: 'none' }}
+          style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
         >
           {timePeriod}
         </p>
@@ -53,7 +53,7 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
           desktop:text-[0.8rem] opacity-0`,
           inView ? 'animate-fade-in' : ''
         )}
-        style={{ animation: inView ? `fade-in 0.5s ease-out 800ms forwards`: 'none' }}
+        style={{ animation: inView ? `fade-in 0.5s ease-out 1500ms forwards`: 'none' }}
       >
         {desciption}
       </p>

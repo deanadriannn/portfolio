@@ -8,6 +8,10 @@ body,
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 @layer components {
   .primary-gradient {
     @apply bg-gradient-to-r from-[#30D1DF] to-[#C02DD8]
@@ -95,5 +99,4 @@ body,
   body {
     @apply bg-background text-foreground;
   }
-  
 }
