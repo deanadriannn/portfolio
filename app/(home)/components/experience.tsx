@@ -20,10 +20,10 @@ const Experience = () => {
   return (
     <div 
       id="experience"
-      className="flex flex-col h-screen justify-start items-center mobile:gap-3 mobile:mb-7 tablet:gap-4 tablet:mb-2 laptop:gap-5 laptop:mb-4 scroll-mt-20 desktop:gap-6 pt-10"
+      className="flex flex-col h-screen justify-center items-center mobile:gap-5 mobile:px-5 tablet:gap-7 tablet:px-28 laptop:px-60 laptop:gap-10 desktop:gap-6"
     >
       <h1 
-        className={cn(`blue-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg laptop:text-2xl desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
+        className={cn(`blue-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
         style={{ animation: inView ? `fade-in 0.5s ease-out ${500}ms forwards`: 'none' }}
       >
         Experience

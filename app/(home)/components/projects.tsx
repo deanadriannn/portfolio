@@ -24,15 +24,15 @@ const Projects = () => {
   return (
     <div 
       id="projects"
-      className="snap-center flex flex-col justify-center h-screen items-center mobile:gap-5 mobile:px-5 tablet:px-10 tablet:gap-7 laptop:px-48"
+      className="snap-center flex flex-col justify-center h-screen items-center mobile:gap-5 mobile:px-5 tablet:px-24 tablet:gap-7 laptop:px-60"
     >
       <h1 
-        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg tablet:text-3xl desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
+        className={cn(`orange-gradient bg-clip-text text-transparent font-extrabold mobile:text-lg desktop:text-3xl opacity-0 animate-fade-in`, font.className)}
         style={{ animation: inView ? `fade-in 0.5s ease-out ${500}ms forwards`: 'none' }}
       >
         Projects
       </h1>
-      <div className="w-full grid mobile:gap-3 mobile:grid-cols-2 tablet:gap-4 laptop:grid-cols-3">
+      <div className="w-full grid mobile:gap-3 mobile:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-3">
         {projects.map((project, index) => {
           const delay = 100 * index;
 
@@ -50,10 +50,11 @@ const Projects = () => {
       </div>
       
       <Button 
+        size="default"
         variant="outline" 
-        className="flex items-center justify-between rounded-full focus:border-sky-400 hover:border-sky-400 px-5 hover:px-4 focus:px-4 transition-all mobile:text-[0.6rem] mobile:gap-2 tablet:text-base tablet:py-7"
+        className="flex items-center justify-between rounded-full w-28 focus:border-sky-400 hover:border-sky-400 px-5 hover:px-4 focus:px-4 transition-all mobile:text-[0.6rem] mobile:gap-2"
       >
-        View More <ArrowRight className="mobile:w-3 mobile:h-3 tablet:w-5 tablet:h-5" />
+        View More <ArrowRight className="mobile:w-3 mobile:h-3" />
       </Button>
     </div>
   )

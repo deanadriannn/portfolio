@@ -19,18 +19,19 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
 
   return (
     <div ref={ref} className="flex flex-col mobile:gap-1 laptop:gap-2">
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center gap-2">
         <div className="flex justify-start gap-2 items-center">
-          <Image 
-            src={icon}
-            alt={title}
-            width={15}
-            height={15}
-            className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
-            style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
-          />
+          <div className="relative mobile:h-4 mobile:w-4">
+            <Image 
+              src={icon}
+              alt={title}
+              fill
+              className={cn("opacity-0", inView ? 'animate-fade-in' : '')}
+              style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
+            />
+          </div>
           <h1 
-            className={cn("font-semibold mobile:text-[0.5rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0",
+            className={cn("font-semibold mobile:text-[0.55rem] tablet:text-[0.6rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0",
               inView ? 'animate-fade-in' : ''
             )}
             style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
@@ -39,8 +40,7 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
           </h1>
         </div>
         <p 
-          className={cn(`text-secondary-text font-light mobile:text-[0.5rem] 
-            laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0`,
+          className={cn(`w-fit text-secondary-text font-light mobile:text-[0.55rem] tablet:text-[0.6rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0`,
             inView ? 'animate-fade-in' : ''
           )}
           style={{ animation: inView ? `fade-in 0.5s ease-out 1000ms forwards`: 'none' }}
@@ -49,8 +49,7 @@ const ExperienceCard = ({icon, title, timePeriod, desciption}: ExperienceCardPro
         </p>
       </div>
       <p 
-        className={cn(`text-secondary-text font-light mobile:text-[0.5rem] laptop:text-[0.7rem] 
-          desktop:text-[0.8rem] opacity-0`,
+        className={cn(`text-secondary-text font-light mobile:text-[0.55rem] tablet:text-[0.6rem] laptop:text-[0.7rem] desktop:text-[0.8rem] opacity-0`,
           inView ? 'animate-fade-in' : ''
         )}
         style={{ animation: inView ? `fade-in 0.5s ease-out 1500ms forwards`: 'none' }}
